@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DEIGEN_DIR=$(spack location -i eigen) \
+  $@ ..
