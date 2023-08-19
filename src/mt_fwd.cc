@@ -345,17 +345,19 @@ void refine_receiving_area(MT2DCtx *ctx, FEMData *fd, int fidx) {
 
 void refine_mesh(MT2DCtx *ctx, FEMData *fd, int fidx, int index)
 {
-  if(ctx->refine_mode == 0)
+  switch (ctx->refine_mode)
   {
+  case 0:
     refine_goal(ctx, fd,fidx, index);
-  }
-  else if (ctx->refine_mode == 1)
-  {
+    break;
+  case 1:
     refine_adaptive(ctx, fd, fidx, index);
-  }
-  else if (ctx->refine_mode == 2)
-  {
+    break;
+  case 2:
     refine_global(ctx, fd, fidx);
+    break;
+  default:
+    break;
   }
   
 }
