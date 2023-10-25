@@ -3,24 +3,18 @@
 #include "mt_pw.h"
 #include "reEstimate.h"
 #include"mt_refine.h"
-
 #include <Eigen/SparseLU>
 
 #include <deal.II/base/quadrature.h>
 #include <deal.II/base/function.h>
 #include <deal.II/dofs/dof_tools.h>
-
- 
 #include <deal.II/fe/fe_q.h>
 #include <deal.II/fe/fe_values.h>
 #include <deal.II/fe/mapping_q1.h>
-
 #include <deal.II/grid/grid_refinement.h>
-
 #include <deal.II/hp/fe_values.h>
 #include <deal.II/hp/refinement.h>
 #include <deal.II/fe/fe_series.h>
-
 #include <deal.II/lac/dynamic_sparsity_pattern.h>
 
 #include <deal.II/numerics/data_out.h>
