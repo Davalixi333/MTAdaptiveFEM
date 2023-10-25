@@ -2,7 +2,6 @@
 #include"reEstimate.h"
 #include <deal.II/grid/grid_refinement.h>
 
-
 #include <deal.II/numerics/error_estimator.h>
 #include <deal.II/numerics/data_out.h>
 #include <deal.II/fe/component_mask.h>
@@ -33,7 +32,6 @@ void Get_Rho::value_list(const std::vector<Point> &point_list, std::vector<doubl
         }
     }
     (void)component;
-
 }
 
 void write_output_error(FEMData *fd, int fidx, VectorF &error )
