@@ -63,10 +63,8 @@ void Re_Estimate(MT2DCtx *ctx, FEMData *fd, VectorZ& solution, VectorF& error)
                 }
                 cell_error += jump;
             }
-            
         }
         error[i] = std::sqrt(cell_error);
         i++;
-        
     }
 }
