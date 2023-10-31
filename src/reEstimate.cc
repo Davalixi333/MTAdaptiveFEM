@@ -5,6 +5,9 @@
 #include <deal.II/grid/tria_accessor.h>
 #include<vector>
 #include<map>
+#include<list>
+#include<ctime>
+#include<algorithm>
 #include<fstream>
 
 void Re_Estimate(MT2DCtx *ctx, FEMData *fd, VectorZ& solution, VectorF& error)
@@ -60,10 +63,8 @@ void Re_Estimate(MT2DCtx *ctx, FEMData *fd, VectorZ& solution, VectorF& error)
                 }
                 cell_error += jump;
             }
-            
         }
         error[i] = std::sqrt(cell_error);
         i++;
-        
     }
 }
