@@ -82,7 +82,6 @@ void refine_adaptive(MT2DCtx *ctx, FEMData *fd,int fidx, int index)
     // dealii::ComponentMask mask;
     // Get_Rho gh(ctx, fd);
     // dealii::Function<2> *fun = &gh;
-
     VectorF estimated_error_per_cell(fd->mesh.n_active_cells());
 	dealii::KellyErrorEstimator<2>::estimate(fd->dh,
                                       dealii::QGauss<1>(ctx->fe->degree + 1),
@@ -134,7 +133,6 @@ void refine_goal(MT2DCtx *ctx, FEMData *fd, int fidx, int index)
     {
         total_estimated_error[i] = estimated_error_per_cell[i] + delta_error[i];
     }
-
     dealii::DataOut<2> data_out;
     data_out.attach_dof_handler(fd->dh);
     data_out.add_data_vector(fd->u, "U");
@@ -155,5 +153,4 @@ void refine_goal(MT2DCtx *ctx, FEMData *fd, int fidx, int index)
     for (auto cell = fd->mesh.begin(0); cell != fd->mesh.end(0); ++cell) {
         cell->recursively_set_user_index(cell->user_index());
     }
-
 }
