@@ -33,7 +33,6 @@ void Get_Rho::value_list(const std::vector<Point> &point_list, std::vector<doubl
         }
     }
     (void)component;
-
 }
 
 void write_output_error(FEMData *fd, int fidx, VectorF &error )
@@ -43,7 +42,6 @@ void write_output_error(FEMData *fd, int fidx, VectorF &error )
 	data_out.add_data_vector(fd->u, "U");
 	data_out.add_data_vector(error, "error");
 	data_out.build_patches();
-
 	std::ofstream output("grid-adp" + std::to_string(fidx)+ ".vtk");
 	data_out.write_vtk(output);
 }
@@ -53,9 +51,7 @@ void write_output(FEMData *fd, int fidx, int index)
     dealii::DataOut<2> data_out;
     data_out.attach_dof_handler(fd->dh);
 	data_out.add_data_vector(fd->u, "U");
-	
 	data_out.build_patches();
-
 	std::ofstream output("grid-block" + std::to_string(fidx) + std::to_string(index)+ ".vtk");
 	data_out.write_vtk(output);
 }
